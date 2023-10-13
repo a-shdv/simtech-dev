@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Навигационное меню */
+.my-navbar {
+    margin-left: 30%;
+}
+
+.my-navbar span {
+    padding-right: 1.5%;
+}
+
+/* Форма */
+.my-form {
+    display: grid;
+    justify-content: center;
+    margin-top: 2.5%;
+}
+
+/* Электронная почта */
+#my-email-label {
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#my-email {
+    margin-bottom: 5%;
+}
+
+/* Имя */
+#my-name-label {
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#my-name {
+    margin-bottom: 5%;
+}
+
+/* Номер телефона */
+#my-tel-label {
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#my-tel {
+    margin-bottom: 5%;
+}
+
+/* Пол */
+#gender-label {
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.gender {
+    margin-bottom: 5%;
+}
+
+/* Город */
+#my-city-label {
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#my-city {
+    margin-bottom: 5%   ;
+}
+
+/* Описание проблемы */
+#my-problem-label {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+
+#my-problem {
+    margin-bottom: 5%;
+}
+
+/* Загрузка файла */
+#my-file {
+    margin-bottom: 5%;
+}
+
+legend {
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+/* Кнопки "Сбросить" и "Отправить" */
+#my-submit {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 50%;
+    position: relative;
+    left: 50%;
+}
+
+#my-reset {
+    margin-bottom: 5%;
+    width: 50%;
+    position: relative;
+    left: 50%;
+}
+
+footer {
+    margin-top: 2.5%;
+    text-align: center;
+}
