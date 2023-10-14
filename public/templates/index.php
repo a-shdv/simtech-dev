@@ -5,7 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
@@ -53,15 +52,14 @@
                     <label>Пол</label> <br>
                     <!-- Мужской -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultMale">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultMale" checked>
                         <label class="form-check-label" for="flexRadioDefaultMale">
                             Мужской
                         </label>
                     </div>
                     <!-- Женский -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultFemale"
-                               checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultFemale">
                         <label class="form-check-label" for="flexRadioDefaultFemale">
                             Женский
                         </label>
@@ -103,11 +101,11 @@
 
             <!-- Загрузка файла -->
             <div class="form-row mb-3 justify-content-center">
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
                 <div class="col-md-3">
                     <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg, image/svg">
                 </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
             </div>
 
 
