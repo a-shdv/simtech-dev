@@ -27,6 +27,6 @@
 <!-- Подвал -->
 <?php require_once 'partials/footer.html'; ?>
 
-<script src="../js/check-active-link.js"></script>
+<script src="../js/validate-active-link.js"></script>
 </body>
 </html>
