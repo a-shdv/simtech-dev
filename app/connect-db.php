@@ -46,15 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $city = $_POST['city'];
     $problem_desc = $_POST['problemDesc'];
     $filename = '/test';
-
-//    echo 'username: ' . $username . "\n\n";
-//    echo '$email: ' . $email . "\n\n";
-//    echo '$phone_number: ' . $phone_number . "\n\n";
-//    echo '$gender: ' . $gender . "\n\n";
-//    echo '$city: ' . $city . "\n\n";
-//    echo '$problem_desc: ' . $problem_desc . "\n\n";
-
-    $se = "CREATE TABLE test;";
+//    $se = "CREATE TABLE form_message
+//(
+//    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+//    username VARCHAR(50) NOT NULL,
+//    email VARCHAR(50) NOT NULL,
+//    phone_number VARCHAR(50) NOT NULL,
+//    gender VARCHAR(50) NOT NULL,
+//    city VARCHAR(50) NOT NULL,
+//    problem_desc TEXT NOT NULL,
+//    filename VARCHAR(255)
+//);";
     $q = "INSERT INTO form_message(username, email, phone_number, gender, city, problem_desc, filename)
             VALUES (
                    '" . $username . "',
@@ -67,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               );";
 
     mysqli_query($mysqli, $q);
-    mysqli_query($mysqli, $se);
+
     mysqli_close($mysqli);
 
     echo 'success!';
