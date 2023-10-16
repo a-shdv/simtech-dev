@@ -17,13 +17,13 @@
                 <!-- Имя -->
                 <div class="col-md-2 mb-3">
                     <label for="my-name">Имя</label>
-                    <input type="text" class="form-control" id="my-name" required>
+                    <input type="text" class="form-control" id="my-name" name="username" required>
                 </div>
 
                 <!-- Номер телефона -->
                 <div class="col-md-3 mb-3">
                     <label for="my-tel">Номер телефона</label>
-                    <input type="tel" class="form-control" id="my-tel" required>
+                    <input type="tel" class="form-control" id="my-tel" name="phoneNumber" required>
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
             <div class="form-row justify-content-center">
                 <div class="col-md-5 mb-3">
                     <label for="my-email">Электронная почта</label>
-                    <input type="email" class="form-control" id="my-email" required>
+                    <input type="email" class="form-control" id="my-email" name="email" required>
                 </div>
             </div>
 
@@ -41,14 +41,15 @@
                     <label>Пол</label> <br>
                     <!-- Мужской -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultMale" checked>
+                        <input class="form-check-input" type="radio" name="gender" value="Мужской" id="flexRadioDefaultMale"
+                                checked>
                         <label class="form-check-label" for="flexRadioDefaultMale">
                             Мужской
                         </label>
                     </div>
                     <!-- Женский -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultFemale">
+                        <input class="form-check-input" type="radio" name="gender" value="Женский" id="flexRadioDefaultFemale">
                         <label class="form-check-label" for="flexRadioDefaultFemale">
                             Женский
                         </label>
@@ -61,7 +62,7 @@
                 <div class="col-md-2">
                     <label>Город</label>
                     <label>
-                        <select class="form-select" required>
+                        <select class="form-select" required name="city">
                             <option value="" disabled>Выберите город</option>
                             <option value="Москва">Москва</option>
                             <option value="Санкт-Петербург">Санкт-Петербург</option>
@@ -83,7 +84,7 @@
             <div class="form-row mb-3 justify-content-center">
                 <div class="col-md-5">
                     <label for="my-textarea" class="form-label">Опишите вашу проблему</label>
-                    <textarea id="my-textarea" class="form-control" rows="5" required></textarea>
+                    <textarea id="my-textarea" class="form-control" rows="5" name="problemDesc" required></textarea>
                 </div>
             </div>
 

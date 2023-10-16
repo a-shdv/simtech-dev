@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-require_once 'IDbConnection.php';
-
-class DbConnection implements IDbConnection
+class DbConnection
 {
     /**
      * @var string Название хоста в СУБД ('localhost')
@@ -136,11 +134,5 @@ class DbConnection implements IDbConnection
     public function setDbDatabase(string $dbDatabase): void
     {
         $this->dbDatabase = $dbDatabase;
-    }
-
-    function connect(string $dbHost, string $dbUsername, string $dbPassword, string $dbDatabase, int $dbPort): void
-    {
-        // Create connection
-        $conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbDatabase, $dbPort);
     }
 }
