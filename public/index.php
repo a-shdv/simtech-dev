@@ -8,7 +8,6 @@
 <!-- Шапка -->
 <?php require_once 'partials/header.html' ?>
 
-
 <!-- Главная форма -->
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
