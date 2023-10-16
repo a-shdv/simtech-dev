@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <?php $title='О нас' ?>
     <?php require_once 'partials/head.html' ?>
-    <title>О нас</title>
 </head>
 <body>
 <!-- Шапка -->
@@ -56,8 +56,11 @@
         </div>
     </div>
 </main>
+
 <!-- Подвал -->
 <?php require_once 'partials/footer.html' ?>
+
+<!-- Скрипты -->
 <script src="js/validate-active-link.js"></script>
 </body>
 </html>

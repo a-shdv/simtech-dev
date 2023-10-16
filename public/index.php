@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <?php $title='Главная' ?>
     <?php require_once 'partials/head.html' ?>
-    <title>Главная</title>
 </head>
 <body>
 <!-- Шапка -->
@@ -12,7 +12,7 @@
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
-        <form>
+        <form action="../app/connect-db.php" method="post">
             <div class="form-row justify-content-center">
                 <!-- Имя -->
                 <div class="col-md-2 mb-3">
@@ -41,15 +41,14 @@
                     <label>Пол</label> <br>
                     <!-- Мужской -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultMale">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultMale" checked>
                         <label class="form-check-label" for="flexRadioDefaultMale">
                             Мужской
                         </label>
                     </div>
                     <!-- Женский -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultFemale"
-                               checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultFemale">
                         <label class="form-check-label" for="flexRadioDefaultFemale">
                             Женский
                         </label>
@@ -160,6 +159,7 @@
 <!-- Подвал -->
 <?php require_once 'partials/footer.html' ?>
 
+<!-- Скрипты -->
 <script src="js/validate-active-link.js"></script>
 </body>
 </html>
