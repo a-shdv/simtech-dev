@@ -12,7 +12,7 @@
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
-        <form action="../app/connect-db.php" method="post" enctype="multipart/form-data">
+        <form action="../app/create_contact.php" method="post" enctype="multipart/form-data">
             <div class="form-row justify-content-center">
                 <!-- Имя -->
                 <div class="col-md-2 mb-3">
