@@ -22,7 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fileExtension = pathinfo($originalFilename, PATHINFO_EXTENSION);
         $uniqueFilename = uniqid() . '_' . md5(uniqid()) . '.' . $fileExtension;
 
-        $filename = '../public/img/' . $uniqueFilename;
+        // Создание папки для загружаемых изображенмй
+        $uploadDir = '../public/img/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir);
+        }
+
+        $filename = $uploadDir . $uniqueFilename;
 
         if (!move_uploaded_file($file['tmp_name'], $filename)) {
             echo 'File could not be uploaded!';

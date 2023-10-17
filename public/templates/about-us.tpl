@@ -58,6 +58,6 @@
 {include file="partials/footer.tpl"}
 
 <!-- JS-Скрипты -->
-<script src="../js/validate-active-link.js"></script>
+<script src="js/validate-active-link.js"></script>
 </body>
 </html>

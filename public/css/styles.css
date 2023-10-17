@@ -28,3 +28,7 @@ form .form-control:focus {
 input[type=radio], input[type=checkbox]{
     accent-color: #d30026;
 }
+
+html body div.container-fluid div.row.justify-content-center nav ul.pagination li.page-item a.page-link {
+    color: #d30026;
+}

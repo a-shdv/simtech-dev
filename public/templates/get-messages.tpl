@@ -32,14 +32,18 @@
                     <td>{$row.city}</td>
                     <td>{$row.problem_desc}</td>
                     <td>
-                        <img src="{$row.filename}" alt="Could not load image" style="max-width: 250px; max-height: = 250px;">
+                        <img src="{$row.filename}" alt="Could not load image"
+                             style="max-width: 250px; max-height: = 250px;">
                     </td>
                 </tr>
             {/foreach}
 
             </tbody>
-
         </table>
+    </div>
+    {* Пагинация *}
+    <div class="row justify-content-center">
+        {include file="partials/pagination.tpl"}
     </div>
 </div>
 
@@ -47,6 +51,6 @@
 {include file="partials/footer.tpl"}
 
 <!-- JS-Скрипты -->
-<script src="../js/validate-active-link.js"></script>
+<script src="js/validate-active-link.js"></script>
 </body>
 </html>
