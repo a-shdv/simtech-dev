@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $problem_desc = $_POST['problemDesc'];
 
     // Загрузка файла в папку
-    $filepath = null;
+    $filename = null;
     if (!empty($_FILES['fileUpload'])) {
         $file = $_FILES['fileUpload'];
         $originalFilename = $file['name'];
@@ -22,11 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fileExtension = pathinfo($originalFilename, PATHINFO_EXTENSION);
         $uniqueFilename = uniqid() . '_' . md5(uniqid()) . '.' . $fileExtension;
 
-        $filepath = __DIR__ . '/../public/img/' . $uniqueFilename;
+        $filename = '../public/img/' . $uniqueFilename;
 
-        if (!move_uploaded_file($file['tmp_name'], $filepath)) {
+        if (!move_uploaded_file($file['tmp_name'], $filename)) {
             echo 'File could not be uploaded!';
         }
+        echo $filename;
     }
 
     // SQL-скрипты
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     VALUES (?, ?, ?, ?, ?, ?, ?)
              ");
     // 1-й аргумент ('sssssss') - вместо знаков вопросов будут передаваться 7 строк
-    $query->bind_param('sssssss', $username, $email, $phone_number, $gender, $city, $problem_desc, $filepath);
+    $query->bind_param('sssssss', $username, $email, $phone_number, $gender, $city, $problem_desc, $filename);
     $query->execute();
 
     $query->close();
