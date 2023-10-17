@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <?php $title='Главная' ?>
+    <?php $title = 'Главная' ?>
     <?php require_once 'partials/head.html' ?>
 </head>
 <body>
@@ -12,7 +12,7 @@
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
-        <form action="../app/connect-db.php" method="post">
+        <form action="../app/connect-db.php" method="post" enctype="multipart/form-data">
             <div class="form-row justify-content-center">
                 <!-- Имя -->
                 <div class="col-md-2 mb-3">
@@ -41,15 +41,17 @@
                     <label>Пол</label> <br>
                     <!-- Мужской -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="gender" value="Мужской" id="flexRadioDefaultMale"
-                                checked>
+                        <input class="form-check-input" type="radio" name="gender" value="Мужской"
+                               id="flexRadioDefaultMale"
+                               checked>
                         <label class="form-check-label" for="flexRadioDefaultMale">
                             Мужской
                         </label>
                     </div>
                     <!-- Женский -->
                     <div class="form-check-inline mr-3">
-                        <input class="form-check-input" type="radio" name="gender" value="Женский" id="flexRadioDefaultFemale">
+                        <input class="form-check-input" type="radio" name="gender" value="Женский"
+                               id="flexRadioDefaultFemale">
                         <label class="form-check-label" for="flexRadioDefaultFemale">
                             Женский
                         </label>
@@ -94,10 +96,10 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                    <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg, image/svg">
+                    <input type="file" name="fileUpload" class="form-control"
+                           accept="image/png, image/jpeg, image/jpg, image/svg">
                 </div>
             </div>
-
 
             <!-- Способ связи -->
             <div class="mb-5">

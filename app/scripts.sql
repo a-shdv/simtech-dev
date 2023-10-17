@@ -10,5 +10,5 @@ CREATE TABLE form_message
     gender VARCHAR(50) NOT NULL,
     city VARCHAR(50) NOT NULL,
     problem_desc TEXT NOT NULL,
-    filename VARCHAR(255)
+    filename MEDIUMBLOB
 );
