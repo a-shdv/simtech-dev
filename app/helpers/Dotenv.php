@@ -1,23 +1,29 @@
 <?php
+declare(strict_types=1);
 
 class Dotenv
 {
     /**
-     * The directory where the .env file can be located.
-     *
-     * @var string
+     * Путь к папке, в которой хранится .env файл
+     * @var string Путь к .env файлу
      */
     private string $path;
 
+    /** Конструктор для всех параметров
+     * @param string $path Путь к .env файлу
+     */
     public function __construct(string $path)
     {
-        if(!file_exists($path)) {
-            printf('%s не существует', $path);;
+        if (!file_exists($path)) {
+            printf('%s не существует: ', $path);;
         }
         $this->path = $path;
     }
 
-    public function load() :void
+    /** Загрузка .env файла
+     * @return void
+     */
+    public function load(): void
     {
         if (!is_readable($this->path)) {
             printf('не удалось прочитать файл %s', $this->path);
@@ -25,7 +31,6 @@ class Dotenv
 
         $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($lines as $line) {
-
             if (strpos(trim($line), '#') === 0) {
                 continue;
             }
