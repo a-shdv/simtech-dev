@@ -14,6 +14,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about-us.php">О нас</a>
                 </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="get-messages.php">Административая панель</a>
+                </li>
             </ul>
         </div>
     </nav>
