@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <?php $title='О нас' ?>
-    <?php require_once 'partials/head.html' ?>
+    <?php require_once __DIR__ . '/partials/head.html' ?>
 </head>
 <body>
 <!-- Шапка -->
-<?php require_once 'partials/header.html' ?>
+<?php require_once __DIR__ . '/partials/header.html' ?>
 
 <!-- Карточки -->
 <main>
@@ -58,7 +58,7 @@
 </main>
 
 <!-- Подвал -->
-<?php require_once 'partials/footer.html' ?>
+<?php require_once __DIR__ . '/partials/footer.html' ?>
 
 <!-- Скрипты -->
 <script src="js/validate-active-link.js"></script>

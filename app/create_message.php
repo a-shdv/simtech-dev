@@ -1,6 +1,6 @@
 <?php
 
-require_once 'db_config.php';
+require_once __DIR__ . '/db_config.php';
 
 global $mysqli;
 
@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-
+    // SQL-скрипты
     $query = $mysqli->prepare("
-                CREATE TABLE IF NOT EXISTS form_contact
+                CREATE TABLE IF NOT EXISTS form_message
                 (
                     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     username VARCHAR(50) NOT NULL,
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query->execute();
 
     $query = $mysqli->prepare("
-                INSERT INTO form_contact(username, email, phone_number, gender, city, problem_desc, filename)
+                INSERT INTO form_message(username, email, phone_number, gender, city, problem_desc, filename)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
              ");
     // 1-й аргумент ('sssssss') - вместо знаков вопросов будут передаваться 7 строк

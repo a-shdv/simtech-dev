@@ -1,6 +1,6 @@
 <?php
-require_once 'helpers/Dotenv.php';
-require_once 'helpers/DbConnection.php';
+require_once __DIR__ . '/helpers/Dotenv.php';
+require_once __DIR__ . '/helpers/DbConnection.php';
 
 // Загрузка .env файла
 $dotenv = null;
