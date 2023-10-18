@@ -42,8 +42,8 @@ class MessageRepo
             $formMessage['username'], $formMessage['email'],
             $formMessage['phone_number'], $formMessage['gender'],
             $formMessage['city'], $formMessage['problem_desc'],
-            $formMessage['filename']);
-
+            $formMessage['filename']
+        );
         $query->execute();
         $query->close();
     }

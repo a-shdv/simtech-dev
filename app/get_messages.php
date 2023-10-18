@@ -14,6 +14,7 @@ MessageRepo::establishDbConn($conn);
 
 $rowsTotal = MessageRepo::countRowsTotalTable($conn); // общее количество строк в таблице
 $pagesTotal = ceil($rowsTotal / $numOfMessagesDesired); // общее количество выводимых страниц (а также округляем в большую сторону
+
 // Получение таблицы с готовой пагинацией
 $paginatedTable = MessageRepo::paginateTable($conn, $currentPage, $numOfMessagesDesired);
 

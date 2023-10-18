@@ -24,8 +24,8 @@
             <tbody>
             {foreach item=row from=$table}
                 <tr>
-                    <th scope="row">{$id}</th>
-                    <td>{$row.id}</td>
+                    <th scope="row">{$row.id}</th>
+                    <td>{$row.username}</td>
                     <td>{$row.email|truncate:20}</td>
                     <td>{$row.phone_number|truncate:15}</td>
                     <td>{$row.gender}</td>

@@ -23,10 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'gender' => $_POST['gender'],
         'city' => $_POST['city'],
         'problem_desc' => $_POST['problemDesc'],
-        'filename' => $file['name']
+        'filename' => '/../public/img/'. $file['name']
     ];
 
+    echo $formMessage['filename'];
+
     MessageRepo::establishDbConn($conn);
+
     MessageRepo::createTable($conn);
     MessageRepo::insertTable($conn, $formMessage);
 
