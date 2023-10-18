@@ -1,21 +1,21 @@
 <?php
 
-require_once __DIR__ . '/db_config.php';
+use App\Repos\MessageRepo;
 
-global $mysqli;
+require_once __DIR__ . '/repos/MessageRepo.php';
+require_once __DIR__ . '/conf/db_config.php';
 
-$query = $mysqli->query("SELECT COUNT(*) FROM form_message;");
-$numOfRows = $query->fetch_row()[0];
-$pagesTotal = ceil($numOfRows / 5);
-$numOfMessagesDesired = 5;
+global $conn;
 
-$currentPage = $_GET['page'];
+$currentPage = $_GET['page']; // получение текущей страницы
+$numOfMessagesDesired = 5; // количество сообщений, которое будет выводиться на одной странице
 
-$query = $mysqli->prepare("SELECT * FROM form_message LIMIT " . $numOfMessagesDesired . " OFFSET " . ($currentPage * $numOfMessagesDesired));
+MessageRepo::establishDbConn($conn);
 
-$query->execute();
+$rowsTotal = MessageRepo::countRowsTotalTable($conn); // общее количество строк в таблице
+$pagesTotal = ceil($rowsTotal / $numOfMessagesDesired); // общее количество выводимых страниц (а также округляем в большую сторону
 
-$table = $query->get_result();
+// Получение таблицы с готовой пагинацией
+$paginatedTable = MessageRepo::paginateTable($conn, $currentPage, $numOfMessagesDesired);
 
-$query->close();
-$mysqli->close();
+MessageRepo::closeDbConn($conn);
