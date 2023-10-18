@@ -32,6 +32,12 @@ input[type=radio], input[type=checkbox] {
     accent-color: #d30026;
 }
 
+/* Таблица результатов */
+html body div.container-fluid div.row.justify-content-center table.table.mt-5.ml-5 thead.thead {
+    background-color: #f8f9fa;
+}
+
+/* Страница пагинации */
 html body div.container-fluid div.row.justify-content-center nav ul.pagination li.page-item a.page-link {
     color: #d30026;
     box-shadow: none !important;
@@ -40,10 +46,12 @@ html body div.container-fluid div.row.justify-content-center nav ul.pagination l
     -o-box-shadow: none !important;
 }
 
+/* Активная страница пагинации*/
 html body div.container-fluid div.row.justify-content-center nav ul.pagination.mt-5 li.page-item.active a.page-link {
 
     color: #ffffff;
     background-color: #d30026;
     border-color: rgba(211, 0, 38, 0.1);
 }
+
 
