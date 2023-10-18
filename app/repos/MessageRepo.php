@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace App\Repos;
 
+use App\Helpers\DbConnection;
+use mysqli_result;
+
 require_once __DIR__ . '/../db_config.php';
 
 class MessageRepo
 {
-    public static function createTable()
+
+    public static function createTable(DbConnection $conn)
     {
-        // Создание таблицы
-        global $mysqli;
-        $query = $mysqli->prepare("
+        $query = $conn->getMySqli()->prepare("
                 CREATE TABLE IF NOT EXISTS form_message
                 (
                     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -28,11 +30,10 @@ class MessageRepo
         $query->close();
     }
 
-    public static function insertTable(array $formMessage)
+    public static function insertTable(DbConnection $conn, array $formMessage)
     {
-        global $mysqli;
         // Добавление данных в таблицу
-        $query = $mysqli->prepare("
+        $query = $conn->getMySqli()->prepare("
                 INSERT INTO form_message(username, email, phone_number, gender, city, problem_desc, filename)
                     VALUES (?, ?, ?, ?, ?, ?, ?);
              ");
@@ -42,13 +43,40 @@ class MessageRepo
             $formMessage['phone_number'], $formMessage['gender'],
             $formMessage['city'], $formMessage['problem_desc'],
             $formMessage['filename']);
-        echo 'test';
+
         $query->execute();
         $query->close();
     }
 
-    public static function closeDbConnection() {
-        global $mysqli;
-        $mysqli->close();
+    public static function countRowsTotalTable(DbConnection $conn): int
+    {
+        $query = $conn->getMySqli()->query("SELECT COUNT(*) FROM form_message;");
+        $rowsTotal = $query->fetch_row()[0];
+        $query->close();
+        return $rowsTotal;
+    }
+
+    public static function paginateTable(DbConnection $conn, int $currentPage, int $numOfMessagesDesired): mysqli_result
+    {
+        $query = $conn->getMySqli()->prepare("SELECT * FROM form_message LIMIT " . $numOfMessagesDesired .
+            " OFFSET " . ($currentPage * $numOfMessagesDesired));
+        $paginatedTable = $query->get_result();
+        $query->close();
+        return $paginatedTable;
+    }
+
+    public static function establishDbConn(DbConnection $conn)
+    {
+        $conn->connectMySqli
+        (
+            $conn->getDbHost(), $conn->getDbUsername(),
+            $conn->getDbPassword(), $conn->getDbDatabase(),
+            $conn->getDbPort()
+        );
+    }
+
+    public static function closeDbConn(DbConnection $conn)
+    {
+        $conn->getMySqli()->close();
     }
 }

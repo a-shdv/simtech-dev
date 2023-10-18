@@ -9,7 +9,7 @@ class FileUploader
     {
         if (!empty($file)) {
             // Создание папки для загружаемых изображенмй
-            $uploadDir = '../public/img/';
+            $uploadDir = __DIR__ . '/../../public/img/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir);
             }
