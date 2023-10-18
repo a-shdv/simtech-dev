@@ -5,9 +5,9 @@ namespace App;
 use App\Helpers\FileUploader;
 use App\Repos\MessageRepo;
 
-require_once 'helpers/FileUploader.php';
-require_once 'repos/MessageRepo.php';
-require_once 'db_config.php';
+require_once __DIR__ .'/helpers/FileUploader.php';
+require_once __DIR__ . '/repos/MessageRepo.php';
+require_once __DIR__ . '/db_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     global $conn;
@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     MessageRepo::establishDbConn($conn);
     MessageRepo::createTable($conn);
-    echo 'tesdsdssdt';
     MessageRepo::insertTable($conn, $formMessage);
 
     MessageRepo::closeDbConn($conn);

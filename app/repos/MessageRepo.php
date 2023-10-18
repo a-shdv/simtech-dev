@@ -53,13 +53,14 @@ class MessageRepo
         $query = $conn->getMySqli()->query("SELECT COUNT(*) FROM form_message;");
         $rowsTotal = $query->fetch_row()[0];
         $query->close();
-        return $rowsTotal;
+        return intval($rowsTotal);
     }
 
-    public static function paginateTable(DbConnection $conn, int $currentPage, int $numOfMessagesDesired): mysqli_result
+    public static function paginateTable(DbConnection $conn, $currentPage, int $numOfMessagesDesired): mysqli_result
     {
         $query = $conn->getMySqli()->prepare("SELECT * FROM form_message LIMIT " . $numOfMessagesDesired .
             " OFFSET " . ($currentPage * $numOfMessagesDesired));
+        $query->execute();
         $paginatedTable = $query->get_result();
         $query->close();
         return $paginatedTable;
