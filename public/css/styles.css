@@ -3,7 +3,10 @@ html body header nav.navbar.navbar-expand-lg.navbar-light.bg-light div#navbarSup
 }
 
 /* Выделение текста */
-::selection {background: #d30026; color:#fff}
+::selection {
+    background: #d30026;
+    color: #fff
+}
 
 /* Логотип */
 html body header nav.navbar.navbar-expand-lg.navbar-light.bg-light a.navbar-brand {
@@ -25,10 +28,22 @@ form .form-control:focus {
 }
 
 /* Радиобоксы, чекбоксы */
-input[type=radio], input[type=checkbox]{
+input[type=radio], input[type=checkbox] {
     accent-color: #d30026;
 }
 
 html body div.container-fluid div.row.justify-content-center nav ul.pagination li.page-item a.page-link {
     color: #d30026;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -o-box-shadow: none !important;
 }
+
+html body div.container-fluid div.row.justify-content-center nav ul.pagination.mt-5 li.page-item.active a.page-link {
+
+    color: #ffffff;
+    background-color: #d30026;
+    border-color: rgba(211, 0, 38, 0.1);
+}
+

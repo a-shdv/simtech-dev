@@ -1,13 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const templatesPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-    const navbarLinks = document.querySelectorAll(".nav-link");
+$(document).ready(function() {
+    const templatesDir = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+    const navbarLinks = $(".nav-link");
 
-    navbarLinks.forEach(function (navbarLink) {
+    let foundActive = false;
+
+    navbarLinks.each(function() {
         const pathToDelete = window.location.pathname;
-        const browserLink = pathToDelete.replace(templatesPath, '');
+        const browserLink = pathToDelete.replace(templatesDir, '');
 
-        if (navbarLink.getAttribute("href") === browserLink) {
-            navbarLink.classList.add("active");
+        if ($(this).attr("href") === browserLink) {
+            $(this).addClass("active");
+            foundActive = true;
+        }
+
+        if (!foundActive && browserLink === '') {
+            $(this).addClass("active");
+            foundActive = true;
         }
     });
 });
