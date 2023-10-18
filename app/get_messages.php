@@ -3,7 +3,7 @@
 use App\Repos\MessageRepo;
 
 require_once __DIR__ . '/repos/MessageRepo.php';
-require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/conf/db_config.php';
 
 global $conn;
 

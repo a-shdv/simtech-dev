@@ -7,7 +7,7 @@ use App\Repos\MessageRepo;
 
 require_once __DIR__ .'/helpers/FileUploader.php';
 require_once __DIR__ . '/repos/MessageRepo.php';
-require_once __DIR__ . '/db_config.php';
+require_once __DIR__ . '/conf/db_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     global $conn;

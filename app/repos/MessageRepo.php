@@ -6,7 +6,7 @@ namespace App\Repos;
 use App\Helpers\DbConnection;
 use mysqli_result;
 
-require_once __DIR__ . '/../db_config.php';
+require_once __DIR__ . '/../conf/db_config.php';
 
 class MessageRepo
 {
