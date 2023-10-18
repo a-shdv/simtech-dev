@@ -1,5 +1,8 @@
 <?php
 
+use App\Helpers\DbConnection;
+use App\Helpers\Dotenv;
+
 require_once __DIR__ . '/helpers/Dotenv.php';
 require_once __DIR__ . '/helpers/DbConnection.php';
 
