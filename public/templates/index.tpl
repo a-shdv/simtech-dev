@@ -14,13 +14,13 @@
                     <!-- Имя -->
                     <div class="col-md-2 mb-3">
                         <label for="my-name">Имя</label>
-                        <input type="text" class="form-control" id="my-name" name="username" required>
+                        <input type="text" class="form-control" id="my-name" name="username" placeholder="Иван" required>
                     </div>
 
                     <!-- Номер телефона -->
                     <div class="col-md-3 mb-3">
                         <label for="my-tel">Номер телефона</label>
-                        <input type="tel" class="form-control" id="my-tel" name="phoneNumber" required>
+                        <input type="tel" class="form-control" id="my-tel" name="phoneNumber" placeholder="+79876543210" required>
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@
                 <div class="form-row justify-content-center">
                     <div class="col-md-5 mb-3">
                         <label for="my-email">Электронная почта</label>
-                        <input type="email" class="form-control" id="my-email" name="email" required>
+                        <input type="email" class="form-control" id="my-email" name="email" placeholder="ivanov@yandex.ru" required>
                     </div>
                 </div>
 
@@ -160,6 +160,6 @@
     {include file="partials/footer.tpl"}
 
     <!-- JS-Скрипты -->
-    <script src="../js/validate-active-link.js"></script>
+    <script src="js/validate-active-link.js"></script>
 </body>
 </html>

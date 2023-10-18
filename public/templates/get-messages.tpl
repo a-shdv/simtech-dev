@@ -26,20 +26,24 @@
                 <tr>
                     <th scope="row">{$id}</th>
                     <td>{$row.id}</td>
-                    <td>{$row.email}</td>
-                    <td>{$row.phone_number}</td>
+                    <td>{$row.email|truncate:20}</td>
+                    <td>{$row.phone_number|truncate:15}</td>
                     <td>{$row.gender}</td>
-                    <td>{$row.city}</td>
-                    <td>{$row.problem_desc}</td>
+                    <td>{$row.city|truncate: 20}</td>
+                    <td>{$row.problem_desc|truncate: 20}</td>
                     <td>
-                        <img src="{$row.filename}" alt="Could not load image" style="max-width: 250px; max-height: = 250px;">
+                        <img src="{$row.filename}" alt="Could not load image"
+                             style="max-width: 50px; max-height: = 50px;">
                     </td>
                 </tr>
             {/foreach}
 
             </tbody>
-
         </table>
+    </div>
+    {* Пагинация *}
+    <div class="row justify-content-center">
+        {include file="partials/pagination.tpl"}
     </div>
 </div>
 
@@ -47,6 +51,7 @@
 {include file="partials/footer.tpl"}
 
 <!-- JS-Скрипты -->
-<script src="../js/validate-active-link.js"></script>
+<script src="js/validate-active-link.js"></script>
+<script src="js/validate-current-page.js"></script>
 </body>
 </html>
