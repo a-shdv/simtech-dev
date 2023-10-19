@@ -32,7 +32,7 @@ class DbConnection
      */
     private int $dbPort;
 
-    private mysqli $mysqli;
+    private mysqli $mysqli; 
 
     /**
      * Конструктор для всех параметров

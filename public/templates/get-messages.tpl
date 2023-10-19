@@ -37,10 +37,24 @@
                     </td>
                 </tr>
             {/foreach}
-
             </tbody>
         </table>
     </div>
+
+{*    <div class="row mt-3">*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3"></div>*}
+{*        <div class="col-md-3">*}
+{*            <form action="../app/send_email.php" method="post" onsubmit="sendEmail()">*}
+{*                <input type="submit" class="btn btn-md" style="color: #fff; background: #d30026" value="Отправить на почту">*}
+{*            </form>*}
+{*        </div>*}
+{*        <div class="col-md-3"></div>*}
+{*    </div>*}
     {* Пагинация *}
     <div class="row justify-content-center">
         {include file="partials/pagination.tpl"}

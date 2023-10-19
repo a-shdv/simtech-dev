@@ -26,8 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'filename' => '/../public/img/'. $file['name']
     ];
 
-    echo $formMessage['filename'];
-
     MessageRepo::establishDbConn($conn);
 
     MessageRepo::createTable($conn);

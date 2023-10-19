@@ -31,7 +31,9 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-      "ext-mysqli": "*"
+      "ext-mysqli": "*",
+        "phpmailer/phpmailer": "^6.8",
+      "ext-json": "*"
     },
     "autoload": {
         "classmap": [
