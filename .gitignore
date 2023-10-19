@@ -4,3 +4,4 @@
 .env
 public/img/*
 public/templates_c
+vendor
