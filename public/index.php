@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../libs/Smarty.class.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $smarty = new Smarty();
 
