@@ -17,18 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     FileUploader::uploadFile($file);
 
     $formMessage = [
-        'username' => $_POST['username'],
-        'email' => $_POST['email'],
-        'phone_number' => $_POST['phoneNumber'],
-        'gender' => $_POST['gender'],
-        'city' => $_POST['city'],
-        'problem_desc' => $_POST['problemDesc'],
+        'username' => trim($_POST['username']),
+        'email' => trim($_POST['email']),
+        'phone_number' => trim($_POST['phoneNumber']),
+        'gender' => trim($_POST['gender']),
+        'city' => trim($_POST['city']),
+        'problem_desc' => trim($_POST['problemDesc']),
         'filename' => '/../public/img/'. $file['name']
     ];
 
     MessageRepo::establishDbConn($conn);
 
-    MessageRepo::createTable($conn);
+    MessageRepo::createTableIfNotExists($conn);
     MessageRepo::insertTable($conn, $formMessage);
 
     MessageRepo::closeDbConn($conn);

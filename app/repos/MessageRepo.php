@@ -11,7 +11,7 @@ require_once __DIR__ . '/../conf/db_config.php';
 class MessageRepo
 {
 
-    public static function createTable(DbConnection $conn)
+    public static function createTableIfNotExists(DbConnection $conn)
     {
         $query = $conn->getMySqli()->prepare("
                 CREATE TABLE IF NOT EXISTS form_message
