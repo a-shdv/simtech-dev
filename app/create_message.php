@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Helpers\DbConnection;
 use App\Helpers\FileUploader;
 use App\Repos\MessageRepo;
 
@@ -26,12 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'filename' => '/../public/img/'. $file['name']
     ];
 
-    MessageRepo::establishDbConn($conn);
+    DbConnection::establishDbConn($conn);
 
     MessageRepo::createTableIfNotExists($conn);
     MessageRepo::insertTable($conn, $formMessage);
 
-    MessageRepo::closeDbConn($conn);
+    DbConnection::closeDbConn($conn);
 
     // Редирект
     header('Location: ../public/index.php');

@@ -8,7 +8,7 @@
 <main>
     <h5 class="mt-5 mb-5 text-center">Панель администратора</h5>
     <div class="container-fluid" style="width: 75%">
-        <form action="../app/admin-login.php" method="post">
+        <form action="../app/admin_login.php" method="post">
 
             <!-- Электронная почта -->
             <div class="form-row justify-content-center">

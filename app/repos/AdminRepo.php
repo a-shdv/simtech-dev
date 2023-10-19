@@ -32,27 +32,7 @@ class AdminRepo
              ");
 
         $query->bind_param('ss', $formAdmin['email'], $formAdmin['password']);
-        echo '<pre>';
-        echo print_r($formAdmin);
-        echo '</pre>';
         $query->execute();
-
         $query->close();
     }
-
-    public static function establishDbConn(DbConnection $conn)
-    {
-        $conn->connectMySqli
-        (
-            $conn->getDbHost(), $conn->getDbUsername(),
-            $conn->getDbPassword(), $conn->getDbDatabase(),
-            $conn->getDbPort()
-        );
-    }
-
-    public static function closeDbConn(DbConnection $conn)
-    {
-        $conn->getMySqli()->close();
-    }
-
 }

@@ -32,7 +32,7 @@ class DbConnection
      */
     private int $dbPort;
 
-    private mysqli $mysqli; 
+    private mysqli $mysqli;
 
     /**
      * Конструктор для всех параметров
@@ -97,24 +97,37 @@ class DbConnection
         return $this->dbDatabase;
     }
 
-    public function getMySqli(): mysqli {
+    public function getMySqli(): mysqli
+    {
         return $this->mysqli;
     }
 
-    public function connectMySqli(string $dbHost, string $dbUsername,
-                                  string $dbPassword, string $dbDatabase,
-                                  int    $dbPort)
+    public function setMySqli(mysqli $mysqli)
     {
-        $this->mysqli = new mysqli
+        $this->mysqli = $mysqli;
+    }
+
+    public static function establishDbConn(DbConnection $conn)
+    {
+        $conn->setMySqli
         (
-            $dbHost,
-            $dbUsername,
-            $dbPassword,
-            $dbDatabase,
-            $dbPort
+            new mysqli
+            (
+                $conn->getDbHost(),
+                $conn->getDbUsername(),
+                $conn->getDbPassword(),
+                $conn->getDbDatabase(),
+                $conn->getDbPort()
+            )
         );
-        if ($this->mysqli->connect_error) {
-            die("Connection failed: " . $this->mysqli->connect_error);
+
+        if ($conn->getMySqli()->connect_error) {
+            die("Connection failed: " . $conn->getMySqli()->connect_error);
         }
+    }
+
+    public static function closeDbConn(DbConnection $conn)
+    {
+        $conn->getMySqli()->close();
     }
 }
