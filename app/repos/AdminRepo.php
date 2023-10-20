@@ -24,6 +24,22 @@ class AdminRepo
         $query->close();
     }
 
+    public static function isAdminExists(DbConnection $conn, string $email): bool
+    {
+        $query = $conn->getMySqli()->prepare("SELECT * FROM form_admin WHERE email = ?");
+        $query->bind_param('s', $email);
+        $query->execute();
+
+        $is_exists = $query->fetch();
+
+        $query->close();
+
+        if ($is_exists) {
+            return true;
+        }
+        return false;
+    }
+
     public static function register(DbConnection $conn, array $formAdmin)
     {
         $query = $conn->getMySqli()->prepare("
