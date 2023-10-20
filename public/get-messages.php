@@ -19,7 +19,7 @@ $smarty->assign('table', $paginatedTable);
 $smarty->assign('currentPage', $currentPage);
 $smarty->assign('pagesTotal', $pagesTotal);
 $smarty->assign('is_logged_in', $_SESSION['is_logged_in']);
-
+$smarty->assign('admin_email', $_SESSION['admin']['email']);
 try {
     if ($_SESSION['is_logged_in'] == 'logged_in') {
         $smarty->display(__DIR__ . '/templates/get-messages.tpl');

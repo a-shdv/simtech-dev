@@ -7,6 +7,8 @@
 
 <main>
     <div class="container-fluid">
+        <div class="text-center mt-5"><b>email: {$admin_email}</b></div>
+
         <div class="row justify-content-center">
             <table class="table mt-5 ml-5" style="width: 75%">
                 <thead class="thead">
