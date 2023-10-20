@@ -20,8 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         AdminRepo::createTableIfNotExists($conn);
         AdminRepo::login($conn, $form_admin)
-            ? $_SESSION['is_logged_in'] = true
-            : $_SESSION['is_logged_in'] = false;
+            ? $_SESSION['is_logged_in'] = 'logged_in'
+            : $_SESSION['is_logged_in'] = 'not_logged_in';
+
+        if ($_SESSION['is_logged_in'] === 'not_logged_in') {
+            $_SESSION['invalid_credentials'] = 'Неправильный логин или пароль';
+        }
 
         DbConnection::closeDbConn($conn);
 

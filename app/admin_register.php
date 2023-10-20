@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         DbConnection::closeDbConn($conn);
 
-        $_SESSION['message'] = 'Регистрация прошла успешно!';
+        $_SESSION['registration_success'] = 'Регистрация прошла успешно!';
 
         header('Location: ../public/admin-login.php');
     } catch (Exception $ex) {

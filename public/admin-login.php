@@ -11,9 +11,14 @@ $smarty->setConfigDir(__DIR__ . '/smarty/configs');
 
 $smarty->assign('is_logged_in', $_SESSION['is_logged_in']);
 
-if (isset($_SESSION['message'])) {
-    $smarty->assign('message', $_SESSION['message']);
-    unset($_SESSION['message']);
+if (isset($_SESSION['registration_success'])) {
+    $smarty->assign('registration_success', $_SESSION['registration_success']);
+    unset($_SESSION['registration_success']);
+}
+
+if (isset($_SESSION['invalid_credentials'])) {
+    $smarty->assign('invalid_credentials', $_SESSION['invalid_credentials']);
+    unset($_SESSION['invalid_credentials']);
 }
 
 $smarty->display(__DIR__ . '/templates/admin-login.tpl');

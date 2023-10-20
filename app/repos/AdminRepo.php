@@ -61,13 +61,16 @@ class AdminRepo
                 SELECT * FROM form_admin
                     WHERE email = '$email'");
 
-        $is_verified = null;
         if ($query->num_rows > 0) {
             $adminDb = $query->fetch_row();
             $is_verified = password_verify($password, $adminDb[2]); // $adminDb[2] = $password from db
+            if ($is_verified) {
+                $query->close();
+                return true;
+            }
         }
-        $query->close();
 
-        return $is_verified;
+        $query->close();
+        return false;
     }
 }
