@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/get_messages.php';
@@ -7,7 +8,6 @@ require_once __DIR__ . '/../app/admin_login.php';
 global $paginatedTable;
 global $pagesTotal;
 global $currentPage;
-
 $smarty = new Smarty();
 $smarty->setCompileDir(__DIR__ . '/smarty/templates_c');
 $smarty->setCacheDir(__DIR__ . '/smarty/cache');

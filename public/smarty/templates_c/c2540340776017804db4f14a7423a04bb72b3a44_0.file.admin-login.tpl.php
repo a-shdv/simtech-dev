@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-10-20 18:53:54
+/* Smarty version 4.3.4, created on 2023-10-20 20:27:48
   from '/opt/lampp/htdocs/public/templates/admin-login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6532b0a235ecd3_81787826',
+  'unifunc' => 'content_6532c6a40ca107_34636639',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2540340776017804db4f14a7423a04bb72b3a44' => 
     array (
       0 => '/opt/lampp/htdocs/public/templates/admin-login.tpl',
-      1 => 1697820520,
+      1 => 1697826434,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6532b0a235ecd3_81787826 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6532c6a40ca107_34636639 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Панель администратора'), 0, false);
@@ -40,7 +40,8 @@ function content_6532b0a235ecd3_81787826 (Smarty_Internal_Template $_smarty_tpl)
         <div class="row justify-content-center">
             <?php if (($_smarty_tpl->tpl_vars['message']->value)) {?>
                 <div class="alert alert-dark" role="alert">
-                    Регистрация прошла успешно!
+                    <?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+
                 </div>
             <?php }?>
         </div>

@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             {if ($message)}
                 <div class="alert alert-dark" role="alert">
-                    Регистрация прошла успешно!
+                    {$message}
                 </div>
             {/if}
         </div>
