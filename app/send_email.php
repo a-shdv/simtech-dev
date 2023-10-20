@@ -41,7 +41,7 @@ if ($formData !== null) {
         $mail->Port = 465;                                    // 467 или 587
 
         //Recipients
-        $mail->setFrom($_ENV['SMTP_USERNAME']); // отправитель
+        $mail->setFrom($email); // отправитель
         $mail->addAddress($_ENV['SMTP_USERNAME']); // получатель
         if ($_SESSION['is_logged_in'] === 'logged_in')
             $mail->addAddress($_SESSION['admin']['email']);
