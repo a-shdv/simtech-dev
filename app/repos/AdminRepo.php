@@ -24,7 +24,7 @@ class AdminRepo
         $query->close();
     }
 
-    public static function insertTable(DbConnection $conn, array $formAdmin)
+    public static function register(DbConnection $conn, array $formAdmin)
     {
         $query = $conn->getMySqli()->prepare("
                 INSERT INTO form_admin(email, password)

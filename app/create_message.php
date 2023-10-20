@@ -5,6 +5,7 @@ namespace App;
 use App\Helpers\DbConnection;
 use App\Helpers\FileUploader;
 use App\Repos\MessageRepo;
+use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__ .'/helpers/FileUploader.php';
 require_once __DIR__ . '/repos/MessageRepo.php';
@@ -27,13 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'filename' => '/../public/img/'. $file['name']
     ];
 
-    DbConnection::establishDbConn($conn);
+    try {
+        DbConnection::establishDbConn($conn);
 
-    MessageRepo::createTableIfNotExists($conn);
-    MessageRepo::insertTable($conn, $formMessage);
+        MessageRepo::createTableIfNotExists($conn);
+        MessageRepo::insertTable($conn, $formMessage);
 
-    DbConnection::closeDbConn($conn);
-
+        DbConnection::closeDbConn($conn);
+    } catch (Exception $ex) {
+        echo 'Could not handle the request';
+    }
     // Редирект
     header('Location: ../public/index.php');
 }
