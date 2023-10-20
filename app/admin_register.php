@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use App\Repos\AdminRepo;
 use App\Helpers\DbConnection;
@@ -17,13 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         DbConnection::establishDbConn($conn);
 
-        $is_admin_exists = AdminRepo::isAdminExists($conn, $form_admin['email']);
         AdminRepo::createTableIfNotExists($conn);
+        $is_admin_exists = AdminRepo::isAdminExists($conn, $form_admin['email']);
 
         if (!$is_admin_exists)
             AdminRepo::register($conn, $form_admin);
 
         DbConnection::closeDbConn($conn);
+
+        $_SESSION['message'] = 'Регистрация прошла успешно!';
+
+        header('Location: ../public/admin-login.php');
     } catch (Exception $ex) {
         echo 'Could not handle the request';
     }

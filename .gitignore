@@ -2,6 +2,6 @@
 .vs/
 .DS_Store
 .env
-public/img/*
-public/templates_c
+!public/img
+public/img/*.png
 vendor

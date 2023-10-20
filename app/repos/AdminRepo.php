@@ -51,4 +51,23 @@ class AdminRepo
         $query->execute();
         $query->close();
     }
+
+    public static function login(DbConnection $conn, array $formAdmin): bool
+    {
+        $email = $formAdmin['email'];
+        $password = $formAdmin['password'];
+
+        $query = $conn->getMySqli()->query("
+                SELECT * FROM form_admin
+                    WHERE email = '$email'");
+
+        $is_verified = null;
+        if ($query->num_rows > 0) {
+            $adminDb = $query->fetch_row();
+            $is_verified = password_verify($password, $adminDb[2]); // $adminDb[2] = $password from db
+        }
+        $query->close();
+
+        return $is_verified;
+    }
 }

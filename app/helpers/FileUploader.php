@@ -14,7 +14,9 @@ class FileUploader
                 mkdir($uploadDir);
             }
 
+            var_dump($file['tmp_name']);
             $filePath = $uploadDir . $file['name'];
+
             if (!move_uploaded_file($file['tmp_name'], $filePath)) {
                 echo 'File could not be uploaded!';
             }

@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     global $conn;
 
     $file = $_FILES['fileUpload'];
+    $_FILES['fileUpload'];
     $file['name'] = FileUploader::encodeFilename($file['name']);
     FileUploader::uploadFile($file);
 
