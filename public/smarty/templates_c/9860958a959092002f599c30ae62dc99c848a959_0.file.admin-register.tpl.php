@@ -1,9 +1,36 @@
-<!doctype html>
+<?php
+/* Smarty version 4.3.4, created on 2023-10-20 18:44:24
+  from '/opt/lampp/htdocs/public/templates/admin-register.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_6532ae68bc41c6_86697391',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '9860958a959092002f599c30ae62dc99c848a959' => 
+    array (
+      0 => '/opt/lampp/htdocs/public/templates/admin-register.tpl',
+      1 => 1697820031,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:partials/head.tpl' => 1,
+    'file:partials/header.tpl' => 1,
+    'file:partials/footer.tpl' => 1,
+  ),
+),false)) {
+function content_6532ae68bc41c6_86697391 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
-{include file="partials/head.tpl" title='Панель администратора'}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Панель администратора'), 0, false);
+?>
 <body>
-{* Шапка *}
-{include file="partials/header.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <main>
     <h5 class="mt-5 mb-5 text-center">Панель администратора</h5>
@@ -49,8 +76,10 @@
 </main>
 
 
-{* Футер *}
-{include file="partials/footer.tpl"}
-<script src="js/validate-password.js"></script>
+<?php $_smarty_tpl->_subTemplateRender("file:partials/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+echo '<script'; ?>
+ src="js/validate-password.js"><?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}

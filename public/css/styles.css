@@ -64,3 +64,7 @@ html body main div.container-fluid form div.form-row.justify-content-center div.
     color: rgb(150, 0, 33);
 }
 
+/* Кнопка "Выйти" */
+html body header nav.navbar.navbar-expand-lg.navbar-light.bg-light div#navbarSupportedContent.collapse.navbar-collapse ul.navbar-nav.ml-auto li.nav-item a#logout.nav-link {
+    color: #d30026;
+}

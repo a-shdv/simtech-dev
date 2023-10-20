@@ -1,9 +1,36 @@
-<!doctype html>
+<?php
+/* Smarty version 4.3.4, created on 2023-10-20 18:53:54
+  from '/opt/lampp/htdocs/public/templates/admin-login.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_6532b0a235ecd3_81787826',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c2540340776017804db4f14a7423a04bb72b3a44' => 
+    array (
+      0 => '/opt/lampp/htdocs/public/templates/admin-login.tpl',
+      1 => 1697820520,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:partials/head.tpl' => 1,
+    'file:partials/header.tpl' => 1,
+    'file:partials/footer.tpl' => 1,
+  ),
+),false)) {
+function content_6532b0a235ecd3_81787826 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
-{include file="partials/head.tpl" title='Панель администратора'}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Панель администратора'), 0, false);
+?>
 <body>
-{* Шапка *}
-{include file="partials/header.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <main>
     <h5 class="mt-5 mb-5 text-center">Панель администратора</h5>
@@ -11,11 +38,11 @@
 
         <!-- Сообщение об успешной регистрации -->
         <div class="row justify-content-center">
-            {if ($message)}
+            <?php if (($_smarty_tpl->tpl_vars['message']->value)) {?>
                 <div class="alert alert-dark" role="alert">
                     Регистрация прошла успешно!
                 </div>
-            {/if}
+            <?php }?>
         </div>
 
 
@@ -54,7 +81,8 @@
 </main>
 
 
-{* Футер *}
-{include file="partials/footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
-</html>
+</html><?php }
+}
