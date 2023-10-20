@@ -22,3 +22,7 @@ $conn = new DbConnection(
     $_ENV['DB_DATABASE'],
     $_ENV['DB_PORT']
 );
+//echo '<pre>';
+//print_r($_ENV);
+//echo '</pre>';
+//die();

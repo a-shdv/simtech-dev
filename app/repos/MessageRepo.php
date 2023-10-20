@@ -13,7 +13,6 @@ class MessageRepo
 
     public static function createTableIfNotExists(DbConnection $conn)
     {
-        echo 'test';
         $query = $conn->getMySqli()->prepare("
                 CREATE TABLE IF NOT EXISTS form_message
                 (

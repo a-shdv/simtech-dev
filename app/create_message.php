@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     global $conn;
 
     $file = $_FILES['fileUpload'];
-    $_FILES['fileUpload'];
     $file['name'] = FileUploader::encodeFilename($file['name']);
     FileUploader::uploadFile($file);
 
@@ -37,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         DbConnection::closeDbConn($conn);
     } catch (Exception $ex) {
-        echo 'Could not handle the request';
+        echo 'Could not handle the request: ' . $ex->getMessage();
     }
     // Редирект
     header('Location: ../public/index.php');

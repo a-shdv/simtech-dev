@@ -1,7 +1,9 @@
 <?php
 
 require_once '../vendor/autoload.php';
+require_once __DIR__ . '/helpers/Dotenv.php';
 
+use App\Helpers\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -11,6 +13,15 @@ $formData = json_decode($json_data, true);
 
 $mail = new PHPMailer(true);
 
+// Загрузка .env файла
+$dotenv = null;
+try {
+    $dotenv = new Dotenv(__DIR__ . '/../.env');
+    $dotenv->load();
+} catch (Exception $ex) {
+    echo 'Error occurred while loading .env file: ' . $ex->getMessage();
+}
+
 if ($formData !== null) {
     $name = $formData['name'] ?? '';
     $email = $formData['email'] ?? '';
@@ -18,31 +29,30 @@ if ($formData !== null) {
     $file = $formData['file'] ?? '';
 
     try {
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-        $mail->Username = '';                     //SMTP username (FROM)
-        $mail->Password = '';                               //SMTP password (FROM)
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['SMTP_USERNAME'];                     // SMTP email
+        $mail->Password = $_ENV['SMTP_PASSWORD'];                               // SMTP пароль
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;                                    // 467 или 587
 
         //Recipients
-        $mail->setFrom($email, $name);
-        $mail->addAddress('', '');
+        $mail->setFrom($_ENV['SMTP_USERNAME']); // отправитель
+        $mail->addAddress(''); // получатель
 
         $mail->Subject = $email . ' - ' . $name;
         $mail->Body = $problem;
 
-        //Attachments
         $mail->send();
 
-        echo 'Message has been sent';
+        echo 'Сообщение отправлено';
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Сообщение не отправлено: {$mail->ErrorInfo}";
     }
 } else {
-    http_response_code(400); // Bad Request
-    echo json_encode(array('error' => 'Invalid JSON data'));
+    http_response_code(400);
+    echo json_encode(array('error' => 'Неверный формат Json данных!'));
 }
