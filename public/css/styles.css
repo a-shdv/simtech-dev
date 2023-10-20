@@ -54,4 +54,17 @@ html body div.container-fluid div.row.justify-content-center nav ul.pagination.m
     border-color: rgba(211, 0, 38, 0.1);
 }
 
+/* Ссылка */
+html body main div.container-fluid form div.form-row.justify-content-center div.col-md-5.mt-2.mb-3.text-right a {
+    color: #d30026;
+}
 
+/* Наведение на ссылку */
+html body main div.container-fluid form div.form-row.justify-content-center div.col-md-5.mt-2.mb-3.text-right a:hover {
+    color: rgb(150, 0, 33);
+}
+
+/* Кнопка "Выйти" */
+html body header nav.navbar.navbar-expand-lg.navbar-light.bg-light div#navbarSupportedContent.collapse.navbar-collapse ul.navbar-nav.ml-auto li.nav-item a#logout.nav-link {
+    color: #d30026;
+}

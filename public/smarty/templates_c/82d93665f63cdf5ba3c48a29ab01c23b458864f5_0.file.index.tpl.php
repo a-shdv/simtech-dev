@@ -1,25 +1,41 @@
-<!doctype html>
+<?php
+/* Smarty version 4.3.4, created on 2023-10-20 17:51:58
+  from '/opt/lampp/htdocs/public/templates/index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_6532a21eae2cb1_65385844',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '82d93665f63cdf5ba3c48a29ab01c23b458864f5' => 
+    array (
+      0 => '/opt/lampp/htdocs/public/templates/index.tpl',
+      1 => 1697817062,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:partials/head.tpl' => 1,
+    'file:partials/header.tpl' => 1,
+    'file:partials/footer.tpl' => 1,
+  ),
+),false)) {
+function content_6532a21eae2cb1_65385844 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="ru">
-{include file="partials/head.tpl" title='Главная'}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Главная'), 0, false);
+?>
 <body>
-{* Шапка *}
-{include file="partials/header.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <!-- Главная форма -->
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
-        <!-- Сообщение об успешной отправке письма -->
-        {if ($mail_sent)}
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="alert alert-dark mb-5" role="alert">
-                        {$mail_sent}
-                    </div>
-                </div>
-            </div>
-        {/if}
-
         <form action="../app/create_message.php" method="post" id="contact-form" enctype="multipart/form-data"
               onsubmit="sendEmail()">
             <div class="form-row justify-content-center">
@@ -169,11 +185,16 @@
     </div>
 </main>
 
-{* Футер *}
-{include file="partials/footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <!-- JS-Скрипты -->
-<script src="js/validate-active-link.js"></script>
-<script src="js/send-email.js"></script>
+<?php echo '<script'; ?>
+ src="js/validate-active-link.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/send-email.js"><?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}

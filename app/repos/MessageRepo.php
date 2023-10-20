@@ -11,14 +11,14 @@ require_once __DIR__ . '/../conf/db_config.php';
 class MessageRepo
 {
 
-    public static function createTable(DbConnection $conn)
+    public static function createTableIfNotExists(DbConnection $conn)
     {
         $query = $conn->getMySqli()->prepare("
                 CREATE TABLE IF NOT EXISTS form_message
                 (
                     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                    username VARCHAR(50) NOT NULL,
                     email VARCHAR(50) NOT NULL,
+                    username VARCHAR(50) NOT NULL,
                     phone_number VARCHAR(50) NOT NULL,
                     gender VARCHAR(50) NOT NULL,
                     city VARCHAR(50) NOT NULL,
@@ -26,6 +26,7 @@ class MessageRepo
                     filename VARCHAR(255)
                 );
             ");
+
         $query->execute();
         $query->close();
     }
@@ -64,20 +65,5 @@ class MessageRepo
         $paginatedTable = $query->get_result();
         $query->close();
         return $paginatedTable;
-    }
-
-    public static function establishDbConn(DbConnection $conn)
-    {
-        $conn->connectMySqli
-        (
-            $conn->getDbHost(), $conn->getDbUsername(),
-            $conn->getDbPassword(), $conn->getDbDatabase(),
-            $conn->getDbPort()
-        );
-    }
-
-    public static function closeDbConn(DbConnection $conn)
-    {
-        $conn->getMySqli()->close();
     }
 }

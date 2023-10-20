@@ -1,9 +1,36 @@
-<!doctype html>
+<?php
+/* Smarty version 4.3.4, created on 2023-10-20 19:40:19
+  from '/Applications/MAMP/htdocs/public/templates/about-us.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_6532d7a3c4c6e0_58888832',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5d18c8980e65c2ae1515cb5798342c161475dada' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/public/templates/about-us.tpl',
+      1 => 1697830815,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:partials/head.tpl' => 1,
+    'file:partials/header.tpl' => 1,
+    'file:partials/footer.tpl' => 1,
+  ),
+),false)) {
+function content_6532d7a3c4c6e0_58888832 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="ru">
-{include file="partials/head.tpl" title='Административная панель'}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Административная панель'), 0, false);
+?>
 <body>
-{* Шапка *}
-{include file="partials/header.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <!-- Карточки -->
 <main>
@@ -54,10 +81,13 @@
     </div>
 </main>
 
-{* Футер *}
-{include file="partials/footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:partials/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <!-- JS-Скрипты -->
-<script src="js/validate-active-link.js"></script>
+<?php echo '<script'; ?>
+ src="js/validate-active-link.js"><?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}

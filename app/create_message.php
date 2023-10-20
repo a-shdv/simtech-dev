@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Helpers\DbConnection;
 use App\Helpers\FileUploader;
 use App\Repos\MessageRepo;
+use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__ .'/helpers/FileUploader.php';
 require_once __DIR__ . '/repos/MessageRepo.php';
@@ -17,24 +19,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     FileUploader::uploadFile($file);
 
     $formMessage = [
-        'username' => $_POST['username'],
-        'email' => $_POST['email'],
-        'phone_number' => $_POST['phoneNumber'],
-        'gender' => $_POST['gender'],
-        'city' => $_POST['city'],
-        'problem_desc' => $_POST['problemDesc'],
+        'username' => trim($_POST['username']),
+        'email' => trim($_POST['email']),
+        'phone_number' => trim($_POST['phoneNumber']),
+        'gender' => trim($_POST['gender']),
+        'city' => trim($_POST['city']),
+        'problem_desc' => trim($_POST['problemDesc']),
         'filename' => '/../public/img/'. $file['name']
     ];
 
-    echo $formMessage['filename'];
+    try {
+        DbConnection::establishDbConn($conn);
 
-    MessageRepo::establishDbConn($conn);
+        MessageRepo::createTableIfNotExists($conn);
+        MessageRepo::insertTable($conn, $formMessage);
 
-    MessageRepo::createTable($conn);
-    MessageRepo::insertTable($conn, $formMessage);
-
-    MessageRepo::closeDbConn($conn);
-
+        DbConnection::closeDbConn($conn);
+    } catch (Exception $ex) {
+        echo 'Could not handle the request: ' . $ex->getMessage();
+    }
     // Редирект
     header('Location: ../public/index.php');
 }
