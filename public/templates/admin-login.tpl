@@ -10,19 +10,23 @@
     <div class="container-fluid" style="width: 75%">
 
         <!-- Сообщение об успешной регистрации -->
-        <div class="row justify-content-center">
-            {if ($registration_success)}
-                <div class="alert alert-dark mb-5" role="alert">
-                    {$registration_success}
+        {if ($registration_success)}
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="alert alert-dark mb-5" role="alert">
+                        {$registration_success}
+                    </div>
                 </div>
-            {/if}
-        </div>
+            </div>
+        {/if}
 
         <!-- Сообщение о неправильном логине или пароле  -->
         {if ($invalid_credentials != '')}
             <div class="row justify-content-center">
-                <div class="alert alert-danger mb-5" role="alert">
-                    {$invalid_credentials}
+                <div class="col-md-5">
+                    <div class="alert alert-danger mb-5" role="alert">
+                        {$invalid_credentials}
+                    </div>
                 </div>
             </div>
         {/if}

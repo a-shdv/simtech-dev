@@ -12,8 +12,10 @@
         <!-- Сообщение об успешной отправке письма -->
         {if ($mail_sent)}
             <div class="row justify-content-center">
-                <div class="alert alert-dark mb-5" role="alert">
-                    {$mail_sent}
+                <div class="col-md-5">
+                    <div class="alert alert-dark mb-5" role="alert">
+                        {$mail_sent}
+                    </div>
                 </div>
             </div>
         {/if}

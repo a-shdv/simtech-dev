@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-10-20 21:54:39
+/* Smarty version 4.3.4, created on 2023-10-20 22:00:02
   from '/Applications/MAMP/htdocs/public/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6532f71fa5ba57_27711703',
+  'unifunc' => 'content_6532f8629e4133_13690621',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '269dc5e54004712ebe9d7c25a1c6e56e3fe1788d' => 
     array (
       0 => '/Applications/MAMP/htdocs/public/templates/index.tpl',
-      1 => 1697838879,
+      1 => 1697839201,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6532f71fa5ba57_27711703 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6532f8629e4133_13690621 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="ru">
 <?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Главная'), 0, false);
@@ -39,9 +39,11 @@ function content_6532f71fa5ba57_27711703 (Smarty_Internal_Template $_smarty_tpl)
         <!-- Сообщение об успешной отправке письма -->
         <?php if (($_smarty_tpl->tpl_vars['mail_sent']->value)) {?>
             <div class="row justify-content-center">
-                <div class="alert alert-dark mb-5" role="alert">
-                    <?php echo $_smarty_tpl->tpl_vars['mail_sent']->value;?>
+                <div class="col-md-5">
+                    <div class="alert alert-dark mb-5" role="alert">
+                        <?php echo $_smarty_tpl->tpl_vars['mail_sent']->value;?>
 
+                    </div>
                 </div>
             </div>
         <?php }?>
