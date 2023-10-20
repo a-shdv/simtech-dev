@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ? $_SESSION['is_logged_in'] = 'logged_in'
             : $_SESSION['is_logged_in'] = 'not_logged_in';
 
+        if ($_SESSION['is_logged_in'] === 'logged_in') {
+            $_SESSION['admin'] = $form_admin;
+        }
+
         if ($_SESSION['is_logged_in'] === 'not_logged_in') {
             $_SESSION['invalid_credentials'] = 'Неправильный логин или пароль';
         }

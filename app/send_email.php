@@ -41,7 +41,9 @@ if ($formData !== null) {
 
         //Recipients
         $mail->setFrom($_ENV['SMTP_USERNAME']); // отправитель
-        $mail->addAddress(''); // получатель
+        $mail->addAddress($_ENV['SMTP_USERNAME']); // получатель
+        if ($_SESSION['is_logged_in'] === 'logged_in')
+            $mail->addAddress($_SESSION['admin']['email']);
 
         $mail->Subject = $email . ' - ' . $name;
         $mail->Body = $problem;
