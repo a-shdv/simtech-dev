@@ -9,6 +9,15 @@
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
+        <!-- Сообщение об успешной отправке письма -->
+        {if ($mail_sent)}
+            <div class="row justify-content-center">
+                <div class="alert alert-dark mb-5" role="alert">
+                    {$mail_sent}
+                </div>
+            </div>
+        {/if}
+
         <form action="../app/create_message.php" method="post" id="contact-form" enctype="multipart/form-data"
               onsubmit="sendEmail()">
             <div class="form-row justify-content-center">

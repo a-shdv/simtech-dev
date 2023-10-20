@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-10-20 19:40:18
+/* Smarty version 4.3.4, created on 2023-10-20 21:54:39
   from '/Applications/MAMP/htdocs/public/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6532d7a2c98204_87578804',
+  'unifunc' => 'content_6532f71fa5ba57_27711703',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '269dc5e54004712ebe9d7c25a1c6e56e3fe1788d' => 
     array (
       0 => '/Applications/MAMP/htdocs/public/templates/index.tpl',
-      1 => 1697830815,
+      1 => 1697838879,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6532d7a2c98204_87578804 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6532f71fa5ba57_27711703 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="ru">
 <?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Главная'), 0, false);
@@ -36,6 +36,16 @@ function content_6532d7a2c98204_87578804 (Smarty_Internal_Template $_smarty_tpl)
 <main>
     <h5 class="mt-5 mb-5 text-center">Связаться с нами</h5>
     <div class="container-fluid" style="width: 75%">
+        <!-- Сообщение об успешной отправке письма -->
+        <?php if (($_smarty_tpl->tpl_vars['mail_sent']->value)) {?>
+            <div class="row justify-content-center">
+                <div class="alert alert-dark mb-5" role="alert">
+                    <?php echo $_smarty_tpl->tpl_vars['mail_sent']->value;?>
+
+                </div>
+            </div>
+        <?php }?>
+
         <form action="../app/create_message.php" method="post" id="contact-form" enctype="multipart/form-data"
               onsubmit="sendEmail()">
             <div class="form-row justify-content-center">

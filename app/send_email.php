@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once '../vendor/autoload.php';
 require_once __DIR__ . '/helpers/Dotenv.php';
@@ -50,11 +51,10 @@ if ($formData !== null) {
 
         $mail->send();
 
-        echo 'Сообщение отправлено';
+        $_SESSION['mail_sent'] = 'Сообщение отправлено!';
     } catch (Exception $e) {
         echo "Сообщение не отправлено: {$mail->ErrorInfo}";
     }
 } else {
     http_response_code(400);
-    echo json_encode(array('error' => 'Неверный формат Json данных!'));
 }
