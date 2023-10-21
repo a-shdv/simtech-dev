@@ -2,6 +2,6 @@
 .vs/
 .DS_Store
 .env
-!public/img
-public/img/*.png
+public/img
+public/smarty/templates_c
 vendor

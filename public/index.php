@@ -8,6 +8,8 @@ $smarty->setCompileDir(__DIR__ . '/smarty/templates_c');
 $smarty->setCacheDir(__DIR__ . '/smarty/cache');
 $smarty->setConfigDir(__DIR__ . '/smarty/configs');
 
+//$smarty->testInstall(); // проверить, подключились ли папки
+
 $smarty->assign('is_logged_in', $_SESSION['is_logged_in']);
 
 if (isset($_SESSION['mail_sent'])) {
