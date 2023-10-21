@@ -23,11 +23,3 @@ $conn = new DbConnection(
     $_ENV['DB_PORT']
 );
 DbConnection::establishDbConn($conn);
-
-// Запуск sql-скриптов, запускащих создание таблиц
-$sql = file_get_contents(__DIR__ . '/../../sql-scripts.sql');
-if ($conn->getMySqli()->multi_query($sql) !== true) {
-    echo "error while executing script: " . $conn->getMySqli()->error;
-}
-DbConnection::closeDbConn($conn);
-
