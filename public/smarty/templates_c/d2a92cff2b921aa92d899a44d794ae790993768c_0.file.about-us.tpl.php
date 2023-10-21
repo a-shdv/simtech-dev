@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-10-21 03:38:54
+/* Smarty version 4.3.4, created on 2023-10-21 15:53:34
   from '/opt/lampp/htdocs/public/templates/about-us.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65332baef26700_64784366',
+  'unifunc' => 'content_6533d7de73ae66_69394716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2a92cff2b921aa92d899a44d794ae790993768c' => 
     array (
       0 => '/opt/lampp/htdocs/public/templates/about-us.tpl',
-      1 => 1697852217,
+      1 => 1697896413,
       2 => 'file',
     ),
   ),
@@ -23,10 +23,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65332baef26700_64784366 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6533d7de73ae66_69394716 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="ru">
-<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'Административная панель'), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:partials/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'О нас'), 0, false);
 ?>
 <body>
 <?php $_smarty_tpl->_subTemplateRender("file:partials/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

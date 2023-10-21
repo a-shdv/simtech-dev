@@ -2,5 +2,4 @@
 .vs/
 .DS_Store
 .env
-public/img
 vendor

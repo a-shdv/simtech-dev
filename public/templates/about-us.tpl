@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-{include file="partials/head.tpl" title='Административная панель'}
+{include file="partials/head.tpl" title='О нас'}
 <body>
 {* Шапка *}
 {include file="partials/header.tpl"}
