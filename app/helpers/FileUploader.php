@@ -5,6 +5,11 @@ namespace App\Helpers;
 
 class FileUploader
 {
+    /**
+     * Загрузка файла
+     * @param array $file Передавое название файла
+     * @return void
+     */
     public static function uploadFile(array $file)
     {
         if (!empty($file)) {
@@ -23,6 +28,11 @@ class FileUploader
         }
     }
 
+    /**
+     * Шифрование файла
+     * @param string $filename Передаваемое название файла
+     * @return string
+     */
     public static function encodeFilename(string $filename): string
     {
         $fileExtension = pathinfo($filename, PATHINFO_EXTENSION);

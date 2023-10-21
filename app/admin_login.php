@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         DbConnection::establishDbConn($conn);
 
-        AdminRepo::createTableIfNotExists($conn);
         AdminRepo::login($conn, $form_admin)
             ? $_SESSION['is_logged_in'] = 'logged_in'
             : $_SESSION['is_logged_in'] = 'not_logged_in';

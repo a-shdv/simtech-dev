@@ -22,7 +22,14 @@ $conn = new DbConnection(
     $_ENV['DB_DATABASE'],
     $_ENV['DB_PORT']
 );
-//echo '<pre>';
-//print_r($_ENV);
-//echo '</pre>';
-//die();
+DbConnection::establishDbConn($conn);
+
+// Запуск sql-скриптов, запускащих создание таблиц
+$sql = file_get_contents(__DIR__ . '/../../sql-scripts.sql');
+if ($conn->getMySqli()->multi_query($sql) === true) {
+    echo "script executed successfully!";
+} else {
+    echo "error while executing script: " . $conn->getMySqli()->error;
+}
+DbConnection::closeDbConn($conn);
+

@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/admin_login.php';
 require_once __DIR__ . '/../app/send_email.php';
+require_once __DIR__ . '/../app/conf/db_config.php';
 
 $smarty = new Smarty();
 $smarty->setCompileDir(__DIR__ . '/smarty/templates_c');

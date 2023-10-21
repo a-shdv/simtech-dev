@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\Repos;
 
 use App\Helpers\DbConnection;
-use mysqli_result;
 
 require_once __DIR__ . '/../conf/db_config.php';
 
