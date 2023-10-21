@@ -68,7 +68,7 @@
     <li><b>.gitignore</b> - файл, исключающий некоторые файлы для git </li>
     <li><b>composer.json</b> - файл с перечнем зависимостей, загружающихся composer</li>
     <li><b>requirements.sh</b> - bash-скрипт, создающий необходимые папки для работы приложения (скомпилированные шаблоны smarty, папка для загрузки изображений)</li>
-    <li><b>sql-scripts.sql</b> - sql-скрипты, создающие бд и таблицы</li>
+    <li><b>simtech_dev_app.sql(ранее sql-scripts.sql)</b> - дамп базы данных</li>
 </li>
 </ul>
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/68262f28-4ed6-4b29-a6f3-2b19de21e7f0" width="200px" height="250px">
