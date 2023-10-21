@@ -1,3 +1,4 @@
+<h4>Задание</h4>
 1. Необходимо создать форму со всеми возможными элементами:
     - input с типами - email, text, checkbox, file, radio, reset
     - textarea
@@ -53,8 +54,7 @@
             <li><b>css/</b> - подключаемые стили для приложения</li>
             <li><b>img/</b> - папка для загрузки изображений</li>
             <li><b>js/</b> - javascript-файлы</li>
-            <li><b>smarty/</b> - smarty файлы и папки ш
-аблонизатора</li>2.2.62.2.6
+            <li><b>smarty/</b> - smarty файлы и папки шаблонизатора</li>
             <li><b>templates</b> - html-шаблоны приложения</li>
         </ul>
     </li>
