@@ -16,3 +16,5 @@ sudo chown -R "$username":"$username" public/smarty
 sudo chmod -R 775 public/smarty
 sudo chmod -R 777 public/smarty/configs
 sudo chmod -R 777 public/smarty/templates_c
+
+cp .env.example .env
