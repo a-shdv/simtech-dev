@@ -3,5 +3,4 @@
 .DS_Store
 .env
 public/img
-public/smarty/templates_c
 vendor
