@@ -11,8 +11,8 @@ $dotenv = null;
 try {
     $dotenv = new Dotenv(__DIR__ . '/../../.env');
     $dotenv->load();
-} catch (Exception $ex) {
-    echo 'Error occurred while loading .env file: ' . $ex->getMessage();
+} catch (Exception $e) {
+    echo 'Error occurred while loading .env file: ' . $e->getMessage();
 }
 
 $conn = new DbConnection(

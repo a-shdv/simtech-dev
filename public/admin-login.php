@@ -16,6 +16,7 @@ if (isset($_SESSION['registration_success'])) {
     unset($_SESSION['registration_success']);
 }
 
+
 if (isset($_SESSION['invalid_credentials'])) {
     $smarty->assign('invalid_credentials', $_SESSION['invalid_credentials']);
     unset($_SESSION['invalid_credentials']);

@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         MessageRepo::insertTable($conn, $formMessage);
 
         DbConnection::closeDbConn($conn);
-    } catch (Exception $ex) {
-        echo 'Could not handle the request: ' . $ex->getMessage();
+    } catch (Exception $e) {
+        echo 'Could not handle the request: ' . $e->getMessage();
     }
     // Редирект
     header('Location: ../public/index.php');

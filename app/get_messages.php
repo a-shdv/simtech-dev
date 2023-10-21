@@ -21,6 +21,6 @@ try {
     $paginatedTable = MessageRepo::paginateTable($conn, $currentPage, $numOfMessagesDesired);
 
     DbConnection::closeDbConn($conn);
-} catch (Exception $ex) {
+} catch (Exception $e) {
     echo 'Could not handle the request';
 }

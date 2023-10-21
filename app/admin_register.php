@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['registration_success'] = 'Регистрация прошла успешно!';
 
         header('Location: ../public/admin-login.php');
-    } catch (Exception $ex) {
+    } catch (Exception $e) {
         echo 'Could not handle the request';
     }
 }

@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         DbConnection::closeDbConn($conn);
 
         header('Location: ../public/get-messages.php');
-    } catch (Exception $ex) {
+    } catch (Exception $e) {
         echo 'Could not handle the request';
     }
 }
