@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS simtech_dev_app;
+USE simtech_dev_app;
+
 CREATE TABLE IF NOT EXISTS form_admin
 (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
