@@ -22,4 +22,3 @@ $conn = new DbConnection(
     $_ENV['DB_DATABASE'],
     $_ENV['DB_PORT']
 );
-DbConnection::establishDbConn($conn);
