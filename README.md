@@ -1,4 +1,3 @@
-<h4>Задание</h4>
 Реализовать функционал формы "Cвязаться с нами"
 
 1. Необходимо создать форму со всеми возможными элементами:
@@ -27,6 +26,7 @@
     <li>Smarty: 4.3</li>
     <li>MariaDB: 10.4.28 </li>
     <li>Apache2: 2.4.56 (Unix)</li>
+    <li>Composer: 2.2.6/li>
     <li>PhpStorm: 2023.2.3</li>
 </ul>
 Окружение:
@@ -35,7 +35,6 @@
     <li>XAMPP: 8.0.28-0</li>
 </ul>
 <h4>Структура проекта</h4>
-<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/be70e68d-689d-4ffc-b3f8-ffcb291a4f6a)" width="200px" height="350px">
 <ul>
     <li>
         <b>app</b> - скрипты: отвечающие за бизнес-логику приложения
@@ -46,7 +45,35 @@
         </ul>
     </li>
 </li>
-</ol>
+</ul>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/be70e68d-689d-4ffc-b3f8-ffcb291a4f6a)" width="200px" height="350px">
+
+<ul>
+    <li>
+        <b>public</b> - точка входа в приложение
+        <ul>
+            <li><b>css</b> - подключаемые стили для приложения</li>
+            <li><b>img</b> - папка для загрузки изображений</li>
+            <li><b>js</b> - javascript-файлы</li>
+            <li><b>smarty</b> - smarty файлы и папки шаблонизатора</li>
+            <li><b>templates</b> - html-шаблоны приложения</li>
+        </ul>
+    </li>
+</li>
+</ul>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/f45359bd-9cee-4247-9bb4-87f6ad1f3abd](https://github.com/a-shdv/simtech-dev-app/assets/54847558/68262f28-4ed6-4b29-a6f3-2b19de21e7f0)" width="200px" height="250px">
+
+<ul>
+    <li><b>vendor</b> - папка со всеми зависимостями</li>
+    <li><b>.env</b> - файл с переменными окружениями</li>
+    <li><b>.gitignore</b> - файл, исключающий некоторые файлы для git </li>
+    <li><b>composer.json</b> - файл с перечнем зависимостей, загружающихся composer</li>
+    <li><b>requirements.sh</b> - bash-скрипт, создающий необходимые папки для работы приложения (скомпилированные шаблоны smarty, папка для загрузки изображений)</li>
+    <li><b>sql-scripts.sql</b> - sql-скрипты, создающие бд и таблицы</li>
+</li>
+</ul>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/68262f28-4ed6-4b29-a6f3-2b19de21e7f0" width="200px" height="250px">
+
 <h4>Инструкция по запуску приложения</h4>
 <ol>
     <li>1</li>
