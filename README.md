@@ -1,5 +1,3 @@
-Реализовать функционал формы "Cвязаться с нами"
-
 1. Необходимо создать форму со всеми возможными элементами:
     - input с типами - email, text, checkbox, file, radio, reset
     - textarea
@@ -55,7 +53,8 @@
             <li><b>css</b> - подключаемые стили для приложения</li>
             <li><b>img</b> - папка для загрузки изображений</li>
             <li><b>js</b> - javascript-файлы</li>
-            <li><b>smarty</b> - smarty файлы и папки шаблонизатора</li>
+            <li><b>smarty</b> - smarty файлы и папки ш
+аблонизатора</li>2.2.62.2.6
             <li><b>templates</b> - html-шаблоны приложения</li>
         </ul>
     </li>
@@ -78,3 +77,28 @@
 <ol>
     <li>1</li>
 </ol>
+
+<h4>Скриншоты работы приложения</h4>
+<h5>Главная страница</h5>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/94331512-31ae-40fa-bc9c-ce5d2cf00100">
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/f2a467d1-0251-4f65-ac2d-d4259dc62ed5">
+
+<h5>Отправка сообщения</h5>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/03f9bbce-e147-469a-90d3-76085bbba4bf">
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/5e0a0c4e-a998-4864-8150-f8b0cc0faea4">
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/8b01756b-2ae2-4eab-ac61-263cd0573bcb">
+
+<h5>Авторизация и регистрация</h5>
+<h6>Авторизация</h6>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/e56cfc17-f806-4872-a84f-53983b332cf7">
+<h6>Валидация полей</h6>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/f08b4379-8928-4f35-b047-fce4bb6522f1">
+<h6>Регистрация</h6>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/5f201d9d-cecb-4b77-a93b-55acd3e9fcbf">
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/3ca3a4f9-e102-4cb7-87ec-915200c0c41d">
+
+
+
+<h6>Валидация полей</h6>
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/8ef84366-a6a9-4314-9c78-9eceee9f44bb">
+<img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/746a9e21-2e7d-4caf-b596-e6673b2476cf">
