@@ -75,8 +75,7 @@
 
 <h4>Инструкция по запуску приложения</h4>
 <ol>
-    <li>Находясь в корневой директории проекта, выполнить команду: bash requirements.sh</li>
-    <li>Восстановить базу данных из файла simtech_dev_app.sql</li>
+    <li>Восстановить базу данных из файла simtech_dev_app.sql (можно сделать через phpmyadmin)</li>
     <li>Находясь в корневой директории проекта, выполнить команду: bash requirements.sh <br><img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/b63366f0-ee06-4557-8344-e9c3b12e9ef7"></li>
     <li>Заполнить файл .env, например, так: <br><img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/a3542094-816e-44ef-8d0e-58500eb2cc50"></li>
 </ol>
