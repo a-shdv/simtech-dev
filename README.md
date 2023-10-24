@@ -77,7 +77,7 @@
 <ol>
     <li>Создать базу данных через запрос <i>create database simtech_dev_app;</i> и восстановить базу данных из файла simtech_dev_app.sql (можно сделать через phpmyadmin)</li>
     <li>Находясь в корневой директории проекта, выполнить команду: <i>bash requirements.sh</i> (без sudo) <br><img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/b63366f0-ee06-4557-8344-e9c3b12e9ef7"></li>
-    <li>Заполнить файл .env, например, так: <br><img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/a3542094-816e-44ef-8d0e-58500eb2cc50"></li>
+    <li>Заполнить файл .env. Все, что начинается с приставки "DB_", относится к настройке подключения к БД. А все, что относится к приставке "SMTP_", отросится к настройке отправки сообщений на почту. Файл .env может выглядеть вот так: <br><img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/a3542094-816e-44ef-8d0e-58500eb2cc50"></li>
 </ol>
 <h4>Скриншоты работы приложения</h4>
 <h5>Главная страница</h5>
@@ -99,12 +99,12 @@
 А если пользователь введет неверные данные на форме авторизации, то будет выдано соответствующее уведомление. 
 <h6>Авторизация</h6>
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/e56cfc17-f806-4872-a84f-53983b332cf7">
-<h6>Валидация полей</h6>
+<h6>Валидация полей авторизации</h6>
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/f08b4379-8928-4f35-b047-fce4bb6522f1">
 <h6>Регистрация</h6>
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/5f201d9d-cecb-4b77-a93b-55acd3e9fcbf">
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/3ca3a4f9-e102-4cb7-87ec-915200c0c41d">
-<h6>Валидация полей</h6>
+<h6>Валидация полей регистрации</h6>
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/8ef84366-a6a9-4314-9c78-9eceee9f44bb">
 <img src="https://github.com/a-shdv/simtech-dev-app/assets/54847558/746a9e21-2e7d-4caf-b596-e6673b2476cf">
 <h5>Страница с результатами</h5>
