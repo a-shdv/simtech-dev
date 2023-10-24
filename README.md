@@ -25,7 +25,7 @@
     <li>Smarty: 4.3</li>
     <li>MariaDB: 10.4.28 </li>
     <li>Apache2: 2.4.56 (Unix)</li>
-    <li>Composer: 2.2.6/li>
+    <li>Composer: 2.2.6</li>
     <li>PhpStorm: 2023.2.3</li>
 </ul>
 Окружение:
